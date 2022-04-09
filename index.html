@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>婳菲婳</title>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+	<link href="css/common.css" rel="stylesheet" type="text/css"/>
+	<link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
+    <script>
+      /*window.onload=function(){
+                    document.onkeydown=function(){
+                        var e=window.event||arguments[0];
+                        if(e.keyCode==123){
+                            return false;
+                        }else if((e.ctrlKey)&&(e.shiftKey)&&(e.keyCode==73)){
+                            return false;
+                        }
+                    };
+                    document.oncontextmenu=function(){
+                        return false;
+                   }
+                }*/
+    </script>
+</head>
+<body>
+<div class="content"></div>
+<div class="time"></div>
+<div class="hide">
+	<div class="red-box" data-txt=""><img src="images/petal.png" onclick="fnOpenPetalImg()"></div>    
+</div>	
+    <div class="wrap">
+	     <div class="bg">
+		     <div class="t_box">
+         <img class="title_img" src="images/t.png">
+         </div>
+         <ul class="text_box">
+        <li>承接:LOGO设计/PC,APP界面/活动图/PC,APP网页开发等</li>
+        <li>工作室制作所有作品都是绝对保密,绝不外泄</li>
+        <li>禁止套图(图只适用于一个个体修改使用）</li>
+        <li>图片享受38%修改服务(特效标题不在内)超服务另计</li>
+        <li>每21点为下班时间, 需夜间加急另计</li>
+        <li>线上印象工作室享受一切解释权！</li>
+        </ul>
+        <div class="text_box">
+        <img class="v_icon zoom-btn" onclick="fnOpenPetalImg()" src="images/yc.png">
+        </div>
+        <div class="bnt_box">
+        <a class="bnt1" onclick="copyTextE()"></a>
+        <p id="text_e">2254828274@qq.com</p>
+        <textarea id="input_e"></textarea>
+        <a class="bnt2" href="tencent://message/?uin=2254828274" onclick="copyTextQ()"></a>
+        <p id="text_q">2254828274</p>
+        <textarea id="input_q"></textarea>
+    </div>
+	     
+         </div>
+</div>
+
+
+<script src="js/rem.js"></script>              
+<script src="js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript">
+$(function() {
+    const $content = $('.content');
+    const $redBox = $('.red-box');
+    const redContentWidth = $content.width();
+    const redBoxWidth = $redBox.width();
+    const basePadding = 30;
+    const maxLeftPX = redContentWidth - redBoxWidth - basePadding * 2;
+
+    let zIndex = 1;
+    let timer;
+
+
+    function getRandom(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    function redBoxSpeed($el, time) {
+        $el.animate({
+                top: '600px'
+            },
+            time * 1000,
+            function() {
+                $el.remove();
+            }
+        )
+    }
+
+    function createRedBox() {
+        const $newNode = $redBox.clone(true);
+        $newNode.attr('data-txt', Math.random() * 100);
+        $newNode.css({
+            'z-index': zIndex++,
+            'left': getRandom(basePadding, maxLeftPX) + 'px',
+            'transform': 'rotate(' + getRandom(-30, 30) + 'deg)'
+        })
+        $content.append($newNode);
+        redBoxSpeed($newNode, 5);
+    }
+
+    function createRedBoxRain() {
+        let count = 120;
+        timer = setInterval(() => {
+            if (count == 0) {
+                clearInterval(timer);
+            } else {
+                count--
+                $('.time').text(count + 's');
+                createRedBox();
+            }
+        }, 300)
+    }
+
+    function ready() {
+        createRedBoxRain();
+    }
+    ready();
+})
+
+	 function fnOpenPetalImg(){
+        var str='<div class="dark animated fadeInDown" onclick="fnCloseDark()">'+
+            '<div class="box_img">'+
+            '<div class="code_gj">'+
+            '<img src="./images/petal_txt.png" alt="">'+
+            '</div>'+
+            '</div>'+
+            '</div>'
+        $('body').append(str)
+    }
+    function fnCloseDark(){
+        $('.dark').remove();
+        $('.addr').val("");
+    }
+  function copyTextE() {
+      var text = document.getElementById("text_e").innerText;
+      var input = document.getElementById("input_e");
+      input.value = text; 
+      input.select(); 
+      document.execCommand("copy"); 
+      alert("【邮箱已复制好了】①编辑:XY信息发送邮箱 ②小印马上联系您！");
+    }
+	function copyTextQ() {
+      var text = document.getElementById("text_q").innerText;
+      var input = document.getElementById("input_q");
+      input.value = text; 
+      input.select(); 
+      document.execCommand("copy"); 
+      alert("【QQ已复制好了】①加QQ发XY ②小印马上联系您！");
+    }
+</script>
+</body>
+
+</html>

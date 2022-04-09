@@ -1,0 +1,314 @@
+ *{margin: 0;padding: 0}
+    html{width: 100%;height: 100%;background-color: #ffffff;}
+    body {width: 100%;display: inline-block;overflow: auto;color: #666;font-size: 14px;font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;overflow-x: hidden;}
+    a {text-decoration: none !important;color: #fff}
+    a:hover {color: #55a1f7;transition: all .3s ease-out}
+    a:link, a:hover, a:visited, a:active, a:focus {text-decoration: none;outline: none !important;blr: expression(this.onFocus=this.blur());transition: all .3s ease;}
+    ul li {list-style: none}
+    ol li {list-style: none}
+    em, i {font-style: normal;}
+    li, ul {margin: 0;padding: 0;list-style: none}
+    h1, h2, h3, h4, h5, h6 {font-family: FZLTXHK, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', SimSun, sans-serif}
+    input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { margin: 0;-webkit-appearance: none}
+    input[type=number] {-moz-appearance: textfield}
+    button, input, select {outline: 0}
+    img {outline: 0;border: 0}
+    table {border-collapse: collapse;border-spacing: 0}
+    /*PC电脑端*/
+    @media screen and (min-width: 768px) {
+		html{background-color: #282828;}
+
+		.content {
+	            position:relative;
+        }
+        .red-box {
+	            position:absolute;
+        }
+        .red-box img {
+	            width:80px;
+	            height:auto;
+	            cursor:pointer;
+        }
+        .hide {
+	            display:none;
+        }
+        .time {
+	            position:absolute;
+	            right:30px;
+	            bottom:30px;
+	            color:red;
+	            font-size:20px;
+        }
+
+        .bg{
+            background: url("../images/bg.jpg") no-repeat;
+            height:100%;
+            width:100%;
+            overflow: hidden;
+            background-size:cover;
+        }
+        .wrap{
+            width: 4.5rem;
+            height: 8rem;
+            margin: 0.4rem auto;
+            box-shadow: 0 12px 24px 0 rgba(4, 4, 4, 0.6);
+			
+        }
+
+        .t_box{
+            text-align: center;
+        }
+
+        .title_img{
+            width: 100%;
+            margin-top: 0.6rem;
+        }
+        .text_box{
+            text-align: center;
+            font-size: 0.15rem;
+            color: #ffffff;
+            line-height: 0.22rem;
+        }
+        .v_icon{
+            width: 55%;
+            margin:0.2rem auto ;
+        }
+
+        .bnt_box{
+            text-align: center;
+        }
+        .bnt_box .bnt1{
+            display: block;
+            background: url(../images/bnt1.png) no-repeat;
+            background-size: 66%;
+            background-position: top;
+            height: 0.48rem;
+			    cursor: pointer;
+        }
+        .bnt_box .bnt2{
+            display: block;
+            background: url(../images/bnt2.png) no-repeat;
+            background-size: 66%;
+            background-position: top;
+            height: 0.48rem;
+            margin-top: 0.06rem;
+			    cursor: pointer;
+        }
+
+        .vip{
+            position: absolute;
+            width: 0.9rem;
+            height: 0.9rem;
+            top: 6rem;
+            left: 6.4rem;
+        }
+        .vip img{
+            width: 100%;
+            text-align: center;
+        }
+
+
+        /*缩放效果*/
+        .zoom-btn {
+            background-size: contain; /*保持图像本身的宽高比例*/
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            animation: sport_btn 1s infinite;
+            -webkit-animation: zoom-btn 1s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes zoom-btn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes zoom-btn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /**弹窗***/
+        .box_img{
+
+        }
+        .dark{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: -20px;
+            background-color: rgba(0, 0, 0, 0.67);
+            z-index: 999999;
+        }
+        .code_gj img {
+            width:5rem;
+            position: fixed;
+            z-index: 999;
+            top: 0rem;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+			    cursor: pointer;
+        }
+
+    }
+    /*H5移动端端*/
+    @media screen and (max-width: 768px) {
+        body{
+            background: url("../images/bg.jpg") no-repeat;
+            height:100%;
+            width:100%;
+            overflow: hidden;
+            background-size:cover;
+        }
+		.content {
+	            position:relative;
+        }
+        .red-box {
+	            position:absolute;
+        }
+        .red-box img {
+	            width:1.26rem;
+	            height:auto;
+	            cursor:pointer;
+        }
+        .hide {
+	            display:none;
+        }
+        .time {
+	            position:absolute;
+	            right:0.24rem;
+	            bottom:0.24rem;
+	            color:red;
+	            font-size:0.24rem;
+        }
+        .t_box{
+            text-align: center;
+        }
+
+        .title_img{
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .text_box{
+            text-align: center;
+            font-size: 0.26rem;
+            color: #ffffff;
+            line-height: 0.45rem;
+        }
+        .v_icon{
+            width: 55%;
+            margin:0.3rem auto ;
+        }
+
+        .bnt_box{
+            text-align: center;
+        }
+        .bnt_box .bnt1{
+            display: block;
+            background: url(../images/bnt1.png) no-repeat;
+            background-size: 62%;
+            background-position: top;
+            height: 0.7rem;
+        }
+        .bnt_box .bnt2{
+            display: block;
+            background: url(../images/bnt2.png) no-repeat;
+            background-size: 62%;
+            background-position: top;
+            height: 0.8rem;
+            margin-top: 0.16rem;
+        }
+
+        .vip{
+            position: absolute;
+            width: 0.9rem;
+            height: 0.9rem;
+            top: 6rem;
+            left: 6.4rem;
+        }
+        .vip img{
+            width: 100%;
+            text-align: center;
+        }
+        /*缩放效果*/
+        .zoom-btn {
+            background-size: contain; /*保持图像本身的宽高比例*/
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            animation: sport_btn 1s infinite;
+            -webkit-animation: zoom-btn 1s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes zoom-btn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes zoom-btn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /**弹窗***/
+        .box_img{
+
+        }
+        .dark{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: -20px;
+            background-color: rgba(0, 0, 0, 0.67);
+            z-index: 999999;
+        }
+        .code_gj img {
+            width: 6rem;
+            position: fixed;
+            z-index: 999;
+            top: 0rem;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+    }
+	#input_e {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+	#input_q {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+	#text_e {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+	#text_q {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
