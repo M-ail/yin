@@ -16,7 +16,7 @@
     table {border-collapse: collapse;border-spacing: 0}
     /*PC电脑端*/
     @media screen and (min-width: 768px) {
-		html{background-color: #282828;}
+		html{background-color: #000;}
 
 		.content {
 	            position:relative;
